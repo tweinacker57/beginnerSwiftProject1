@@ -16,4 +16,14 @@ repeat {
     default: break
     }
 }while accountType == ""
-    print("You have opened a \(accountType) account.")
+        print("You have opened a \(accountType) account.")
+        
+        
+//Create Bank account balance and add withdrawal and desposit functionality
+        
+var balance = 100
+func getBalanceInfo() -> String{
+    "Current balance:$\(balance)"
+}
+print(getBalanceInfo())
+
