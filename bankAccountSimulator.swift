@@ -26,4 +26,17 @@ func getBalanceInfo() -> String{
     "Current balance:$\(balance)"
 }
 print(getBalanceInfo())
+func withdraw(amount: Int){
+    balance -= amount
+    print("Withdrew:$ \(amount). \(getBalanceInfo())")
+}
+withdraw(amount : 20)
 
+func debitWithdraw(amount: Int){
+    if amount > balance{
+        print("Insufficient funds to withdraw $\(amount). \(getBalanceInfo())")
+    }else {
+        withdraw(amount: amount)
+    }
+}
+debitWithdraw(amount: 81)
