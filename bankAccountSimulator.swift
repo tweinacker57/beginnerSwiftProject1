@@ -28,7 +28,7 @@ func getBalanceInfo() -> String{
 print(getBalanceInfo())
 func withdraw(amount: Int){
     balance -= amount
-    print("Withdrew:$ \(amount). \(getBalanceInfo())")
+    print("Withdrew:$\(amount). \(getBalanceInfo())")
 }
 withdraw(amount : 20)
 
@@ -40,3 +40,23 @@ func debitWithdraw(amount: Int){
     }
 }
 debitWithdraw(amount: 81)
+debitWithdraw(amount: 80)
+
+func deposit(amount: Int){
+    balance += amount
+    print("Deposited $\(amount). \(getBalanceInfo())")
+}
+deposit(amount: 100)
+
+func creditDeposit(_ amount: Int) {
+    if balance == 0 {
+        print("Paid off account balance.")
+    } else if balance > 0 {
+        print("Overpaid account balance.")
+    }
+}
+withdraw(amount: 200)
+creditDeposit(50)
+creditDeposit(100)
+
+
