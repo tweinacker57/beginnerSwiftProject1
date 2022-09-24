@@ -5,4 +5,8 @@ print("2. Credit account")
 print("3. Bank account")
 var accountType = ""
 var input = 0
-
+repeat {
+    print("Which option do you choose? (1, 2, or 3)")
+    input = Int.random(in: 1...5)
+    print("The selected option is \(input).")
+}
