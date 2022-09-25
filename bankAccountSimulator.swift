@@ -59,4 +59,45 @@ withdraw(amount: 200)
 creditDeposit(50)
 creditDeposit(100)
 
+let transferAmount = 50
+func transferType(_ transferType: String){
+    switch transferType {
+    case "withdraw":
+        if accountType == "debit"{
+            debitWithdraw(amount: transferAmount)
+        } else {
+            withdraw(amount: transferAmount)
+        }
+    case "deposit":
+        if accountType == "credit" {
+            creditDeposit(transferAmount)
+        } else {
+            deposit(amount: transferAmount)
+        }
+    default:
+        break
+    }
+}
+var isSystemOpened = true
+var option = 0
 
+repeat {
+    print("What would you like to do?")
+    print("1. Check bank account")
+    print("2. Withdraw money")
+    print("3. Deposit money")
+    print("4. Close the system")
+    print("Which option do you choose? 1,2,3, or 4")
+    option = Int.random(in: 1...5)
+    print("The selected option is \(option)")
+    switch option {
+    case 1: print("Current balance: $:\(balance) dollars")
+    case 2: transferType("withdraw")
+    case 3: transferType("deposit")
+    case 4:
+        isSystemOpened = false
+        print("The system is closed")
+    default: break
+    }
+ }while isSystemOpened
+ 
